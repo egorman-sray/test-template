@@ -1,0 +1,4 @@
+apiVersion: v1
+description: A Helm chart to deploy the my_fun_service.
+name: my_fun_service
+version: 4.20

@@ -1,0 +1,24 @@
+options:
+    dynamic_substitutions: true
+  
+substitutions:
+  # This replaces any forward slashes with a dash as docker does not allow
+  # forward slashes to be in tags. i.e:
+  # feature/my-feature-branch becomes feature-my-feature-branch
+  _FORMATTED_BRANCH_NAME: ${BRANCH_NAME//\//-}
+
+steps:
+  - id: Build Docker
+    name: 'gcr.io/cloud-builders/docker'
+    entrypoint: '/bin/bash'
+    args:
+      - '-c'
+      - |
+        docker build \
+          -t 'eu.gcr.io/$PROJECT_ID/test-template:${_FORMATTED_BRANCH_NAME}' \
+          -t 'eu.gcr.io/$PROJECT_ID/test-template:latest' \
+          -t 'eu.gcr.io/$PROJECT_ID/test-template:$SHORT_SHA' .
+
+  - id: Push Docker
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['push', '--all-tags', 'eu.gcr.io/$PROJECT_ID/test-template']

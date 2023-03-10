@@ -1,0 +1,23 @@
+name: Linting
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.11
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -r requirements.txt
+          python -m pip install my_fun_service/.[test]
+      - name: Lint with black/flake8/isort
+        run: |
+          python -m black . --check --verbose --diff --color
+          python -m flake8 .
+          python -m isort . --check-only --profile black
