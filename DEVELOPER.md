@@ -27,7 +27,7 @@ Please install the following:
 Clone the repository:
 
 ```bash
-git clone https://github.com/arabesque-sray/test-template
+git clone https://github.com/egorman-sray/test-template
 cd test-template
 ```
 

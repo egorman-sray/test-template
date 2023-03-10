@@ -3,8 +3,8 @@
 This is a description of my fun service.
 
 ![python](https://img.shields.io/badge/python-3.11-blue.svg)
-[![Testing](https://github.com/arabesque-sray/test-template/actions/workflows/testing.yaml/badge.svg)](https://github.com/arabesque-sray/test-template/actions/workflows/testing.yaml)
-[![Linting](https://github.com/arabesque-sray/test-template/actions/workflows/linting.yaml/badge.svg)](https://github.com/arabesque-sray/test-template/actions/workflows/linting.yaml)
+[![Testing](https://github.com/egorman-sray/test-template/actions/workflows/testing.yaml/badge.svg)](https://github.com/egorman-sray/test-template/actions/workflows/testing.yaml)
+[![Linting](https://github.com/egorman-sray/test-template/actions/workflows/linting.yaml/badge.svg)](https://github.com/egorman-sray/test-template/actions/workflows/linting.yaml)
 
 ## Developement
 
